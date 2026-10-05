@@ -47,7 +47,7 @@ async function handleTranscribe(request, env) {
 
     const bytes = await audioFile.arrayBuffer();
 
-    const response = await env.AI.run('@cf/openai/whisper-large-v3-turbo', {
+    const response = await env.AI.run('@cf/openai/whisper', {
       audio: [...new Uint8Array(bytes)]
     });
 
@@ -57,8 +57,12 @@ async function handleTranscribe(request, env) {
 
     return json({ text: response.text });
   } catch (err) {
-    console.error('Transcribe error:', err);
-    return json({ error: 'Processing failed. Please try again.' }, 500);
+    console.error('Transcribe error:', {
+      message: err.message,
+      code: err.code,
+      name: err.name
+    });
+    return json({ error: 'Processing failed.', detail: err.message, code: err.code }, 500);
   }
 }
 
