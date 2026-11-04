@@ -40,10 +40,10 @@ async function loadLocale(lang) {
 }
 
 function applyTranslations(t) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
+  document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
     if (t[key] === undefined) return;
-    if (key === 'disclaimer') el.innerHTML = t[key];
+    if (el.hasAttribute('data-i18n-html') || key === 'disclaimer') el.innerHTML = t[key];
     else el.textContent = t[key];
   });
 }

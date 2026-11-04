@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Audio Tool — Transcribe & Text-to-Speech (Free)</title>
-<meta name="description" content="Free AI audio tool. Transcribe audio to text with Whisper, or convert text to speech with MeloTTS. Powered by Cloudflare Workers AI.">
-<meta name="keywords" content="ai transcription, speech to text, text to speech, whisper, audio to text, tts">
+<title>Toolara Audio — Free AI Speech-to-Text &amp; Text-to-Speech</title>
+<meta name="description" content="Convert speech to text or turn text into natural speech online. Whisper transcription and MeloTTS voices in 7 languages. Free, no sign-up — your audio is never stored.">
+<meta name="keywords" content="speech to text, text to speech, ai transcription, whisper, tts, audio to text, voice generator, transcript generator">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="theme-color" content="#0f766e">
 
@@ -14,14 +14,20 @@
 <link rel="alternate" hreflang="zh-Hans" href="https://audio.toolara.dev/zh/">
 <link rel="alternate" hreflang="x-default" href="https://audio.toolara.dev/">
 
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="AI Audio Tool — Transcribe & Text-to-Speech">
-<meta property="og:description" content="Transcribe audio to text, or convert text to speech. Free.">
+<meta property="og:site_name" content="Toolara Audio">
+<meta property="og:title" content="Toolara Audio — AI Speech-to-Text &amp; Text-to-Speech">
+<meta property="og:description" content="Transcribe recordings to text, or turn any text into natural speech. Free, no sign-up.">
 <meta property="og:url" content="https://audio.toolara.dev/">
 <meta property="og:image" content="https://audio.toolara.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Audio Tool — Transcribe & Text-to-Speech">
+<meta property="og:image:alt" content="Toolara Audio — AI Speech-to-Text &amp; Text-to-Speech">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://audio.toolara.dev/og-image.png">
 
@@ -29,16 +35,16 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "AI Audio Tool",
+  "name": "Toolara Audio",
   "url": "https://audio.toolara.dev/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
-  "description": "Free AI tool for audio transcription and text-to-speech.",
+  "description": "Free AI tool for audio transcription (speech-to-text) and natural text-to-speech in 7 languages.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261104a">
 <style id="footer-groups-css">
 .site-footer-grid{grid-template-columns:minmax(0,0.85fr) minmax(0,2.65fr)!important;gap:40px!important}
 .site-footer-column:nth-child(2){grid-row:1/span 2!important}
@@ -69,132 +75,189 @@
 @media(max-width:640px){.site-footer-grid{grid-template-columns:1fr !important;gap:26px !important}}
 </style></head>
 <body>
-<header class="site-header"><div class="site-header-inner"><a class="site-brand" href="/" aria-label="ai-audio-tool"><span class="site-brand-mark" aria-hidden="true">AU</span><span class="site-brand-name" data-i18n="title"></span></a><nav class="site-nav" aria-label="Site navigation"><select id="langSelect" onchange="setLang(this.value)" aria-label="Language">
+<header class="site-header"><div class="site-header-inner"><a class="site-brand" href="/" aria-label="Toolara Audio"><img class="site-brand-logo" src="/images/logo-96.png" alt="" width="38" height="38"><span class="site-brand-name" data-i18n="title"></span></a><nav class="site-nav" aria-label="Site navigation"><select id="langSelect" onchange="setLang(this.value)" aria-label="Language">
       <option value="en">English</option>
       <option value="zh">简体中文</option>
     </select></nav></div></header>
 
-
+<div class="topzone">
 <header class="hero">
-
   <div class="hero-inner">
-    <div class="hero-badge">🎧 AI-powered</div>
-    <h1 data-i18n="title">AI Audio Tool</h1>
-    <p data-i18n="subtitle">Transcribe audio to text, or convert text to speech — in seconds.</p>
+    <div class="hero-badges">
+      <span class="hero-badge"><span aria-hidden="true">🎙️</span> <span data-i18n="badgeAi">AI-powered</span></span>
+      <span class="hero-badge"><span aria-hidden="true">🆓</span> <span data-i18n="badgeFree">100% free</span></span>
+      <span class="hero-badge"><span aria-hidden="true">⚡</span> <span data-i18n="badgeNoSignup">No sign-up</span></span>
+      <span class="hero-badge"><span aria-hidden="true">🔒</span> <span data-i18n="badgePrivate">Nothing stored</span></span>
+    </div>
+    <h1 data-i18n-html="heroTitle">AI Speech-to-Text &amp; <em>Text-to-Speech</em></h1>
+    <p data-i18n="subtitle">Transcribe any recording into clean text, or turn any text into natural speech — in seconds.</p>
+    <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="card">
-    <h2 class="visually-hidden" data-i18n="calcHeading">Audio tool</h2>
-
-    <div class="mode-tabs">
-      <button class="mode-tab active" data-mode="transcribe" onclick="switchMode('transcribe')" data-i18n="modeTranscribe">🎤 Speech to Text</button>
-      <button class="mode-tab" data-mode="synthesize" onclick="switchMode('synthesize')" data-i18n="modeSynthesize">🔊 Text to Speech</button>
-    </div>
-
-    <!-- Transcribe -->
-    <div id="mode-transcribe" class="mode-panel">
-      <p class="mode-desc" data-i18n="descTranscribe">Upload an audio file and get a text transcript.</p>
-
-      <div class="upload-zone" id="uploadZone">
-        <input type="file" id="audioFile" accept="audio/*" style="display:none;">
-        <div class="upload-content" id="uploadContent">
-          <div class="upload-icon">🎵</div>
-          <div class="upload-text" data-i18n="uploadText">Click to upload or drag an audio file</div>
-          <div class="upload-hint" data-i18n="uploadHint">MP3, WAV, M4A · Max 25MB</div>
-        </div>
-      </div>
-
-      <div class="file-info" id="fileInfo" style="display:none;">
-        <span id="fileName"></span>
-        <button class="remove-btn" onclick="clearFile()">✕</button>
-      </div>
-
-      <button class="calc" type="button" id="transcribeBtn" onclick="transcribe()" data-i18n="transcribeBtn" disabled>Transcribe</button>
-
-      <div id="transcribeLoading" class="loading" style="display:none;">
-        <div class="spinner"></div>
-        <div data-i18n="transcribeLoading">Transcribing audio...</div>
-      </div>
-
-      <div id="transcribeError" class="error" style="display:none;"></div>
-
-      <div id="transcribeResult" class="result-box" style="display:none;">
-        <div class="result-header">
-          <div class="result-label" data-i18n="resultLabel">Transcript</div>
-          <button class="copy-btn" type="button" onclick="copyTranscript()" data-i18n="copyBtn">Copy</button>
-          <span class="copy-copied" id="copyCopied" data-i18n="copyCopied">Copied!</span>
-        </div>
-        <div class="result-text" id="transcriptText"></div>
+  <section class="console" id="console" data-mode="transcribe">
+    <div class="console-head">
+      <div class="seg" role="tablist">
+        <button class="seg-btn active" data-mode="transcribe" onclick="switchMode('transcribe')" data-i18n="modeTranscribe">🎤 Speech to Text</button>
+        <button class="seg-btn" data-mode="synthesize" onclick="switchMode('synthesize')" data-i18n="modeSynthesize">🔊 Text to Speech</button>
       </div>
     </div>
 
-    <!-- Synthesize -->
-    <div id="mode-synthesize" class="mode-panel" style="display:none;">
-      <p class="mode-desc" data-i18n="descSynthesize">Enter text and generate speech audio.</p>
+    <div class="console-body">
+      <div class="c-left">
+        <div class="panel-label"><span class="panel-step">1</span><span data-i18n="inputLabel">Input</span></div>
 
-      <label for="ttsText" data-i18n="ttsTextLabel">Text to speak</label>
-      <textarea id="ttsText" rows="5" placeholder="Type or paste text here..."></textarea>
+        <div id="mode-transcribe" class="mode-panel">
+          <div class="upload-zone" id="uploadZone">
+            <input type="file" id="audioFile" accept="audio/*" style="display:none;">
+            <div class="upload-content" id="uploadContent">
+              <div class="upload-icon">🎵</div>
+              <div class="upload-text" data-i18n="uploadText">Click to upload or drag an audio file</div>
+              <div class="upload-hint" data-i18n="uploadHint">MP3, WAV, M4A · Max 25MB</div>
+            </div>
+          </div>
+          <div class="file-info" id="fileInfo" style="display:none;">
+            <span id="fileName"></span>
+            <button class="remove-btn" onclick="clearFile()">✕</button>
+          </div>
+          <button class="calc" type="button" id="transcribeBtn" onclick="transcribe()" data-i18n="transcribeBtn" disabled>Transcribe</button>
+          <div id="transcribeLoading" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <div data-i18n="transcribeLoading">Transcribing audio...</div>
+          </div>
+        </div>
 
-      <label for="ttsLang" data-i18n="ttsLangLabel">Language</label>
-      <select id="ttsLang">
-        <option value="en" data-i18n="langEn">English</option>
-        <option value="zh" data-i18n="langZh">Chinese (中文)</option>
-        <option value="fr" data-i18n="langFr">French</option>
-        <option value="de" data-i18n="langDe">German</option>
-        <option value="es" data-i18n="langEs">Spanish</option>
-        <option value="ja" data-i18n="langJa">Japanese</option>
-        <option value="ko" data-i18n="langKo">Korean</option>
-      </select>
-
-      <button class="calc" type="button" id="synthesizeBtn" onclick="synthesize()" data-i18n="synthesizeBtn">Generate speech</button>
-
-      <div id="synthesizeLoading" class="loading" style="display:none;">
-        <div class="spinner"></div>
-        <div data-i18n="synthesizeLoading">Generating speech...</div>
+        <div id="mode-synthesize" class="mode-panel" style="display:none;">
+          <label for="ttsText" data-i18n="ttsTextLabel">Text to speak</label>
+          <textarea id="ttsText" rows="5" placeholder="Type or paste text here..."></textarea>
+          <label for="ttsLang" data-i18n="ttsLangLabel">Language</label>
+          <select id="ttsLang">
+            <option value="en" data-i18n="langEn">English</option>
+            <option value="zh" data-i18n="langZh">Chinese (中文)</option>
+            <option value="fr" data-i18n="langFr">French</option>
+            <option value="de" data-i18n="langDe">German</option>
+            <option value="es" data-i18n="langEs">Spanish</option>
+            <option value="ja" data-i18n="langJa">Japanese</option>
+            <option value="ko" data-i18n="langKo">Korean</option>
+          </select>
+          <button class="calc" type="button" id="synthesizeBtn" onclick="synthesize()" data-i18n="synthesizeBtn">Generate speech</button>
+          <div id="synthesizeLoading" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <div data-i18n="synthesizeLoading">Generating speech...</div>
+          </div>
+        </div>
       </div>
 
-      <div id="synthesizeError" class="error" style="display:none;"></div>
+      <div class="c-right">
+        <div class="panel-label"><span class="panel-step step-alt">2</span><span data-i18n="outputLabel">Output</span></div>
 
-      <div id="synthesizeResult" class="result-box" style="display:none;">
-        <div class="result-header">
-          <div class="result-label" data-i18n="resultLabelTTS">Generated audio</div>
-          <button class="copy-btn" type="button" onclick="downloadAudio()" data-i18n="downloadBtn">Download MP3</button>
+        <div class="out-empty" id="outEmpty">
+          <div class="eq eq-small" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="empty-text" data-i18n="outEmptyHint">Your transcript or generated speech will appear here</div>
         </div>
-        <audio id="audioPlayer" controls style="width:100%; margin-top:12px;"></audio>
+
+        <div id="transcribeResult" class="result-box" style="display:none;">
+          <div class="result-header">
+            <div class="result-label" data-i18n="resultLabel">Transcript</div>
+            <button class="copy-btn" type="button" onclick="copyTranscript()" data-i18n="copyBtn">Copy</button>
+            <span class="copy-copied" id="copyCopied" data-i18n="copyCopied">Copied!</span>
+          </div>
+          <div class="result-text" id="transcriptText"></div>
+          <div class="result-meta" id="resultMeta"></div>
+        </div>
+
+        <div id="synthesizeResult" class="result-box" style="display:none;">
+          <div class="result-header">
+            <div class="result-label" data-i18n="resultLabelTTS">Generated audio</div>
+            <button class="copy-btn" type="button" onclick="downloadAudio()" data-i18n="downloadBtn">Download WAV</button>
+          </div>
+          <img class="synth-wave" src="/examples/waveform.png" alt="" aria-hidden="true">
+          <audio id="audioPlayer" controls preload="metadata"></audio>
+        </div>
+
+        <div id="transcribeError" class="error" style="display:none;"></div>
+        <div id="synthesizeError" class="error" style="display:none;"></div>
+
+        <div class="out-note" data-i18n="outNote">Processed in memory — nothing is stored.</div>
       </div>
     </div>
-  </section>
-
-  <section>
-    <h2 data-i18n="whatIsTitle">What can you do?</h2>
-    <ul>
-      <li data-i18n="use1"><strong>Speech to text</strong> — Upload a recording and get a clean text transcript. Works for meetings, interviews, voice notes, and podcasts.</li>
-      <li data-i18n="use2"><strong>Text to speech</strong> — Convert any text into spoken audio in multiple languages. Download as MP3.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
-    <h3 data-i18n="faq1q">Is this tool free?</h3>
-    <p data-i18n="faq1a">Yes. It runs on Cloudflare Workers AI with a free daily quota. Normal use won't hit limits.</p>
-
-    <h3 data-i18n="faq2q">Are my files stored?</h3>
-    <p data-i18n="faq2a">No. Audio is processed in memory and discarded immediately after the transcript or speech is generated. Nothing is stored.</p>
-
-    <h3 data-i18n="faq3q">What audio formats work for transcription?</h3>
-    <p data-i18n="faq3a">MP3, WAV, M4A, and most common audio formats. Maximum file size is 25MB.</p>
-
-    <h3 data-i18n="faq4q">What languages does text-to-speech support?</h3>
-    <p data-i18n="faq4a">MeloTTS supports English, Chinese, French, German, Spanish, Japanese, and Korean. Output is MP3 format.</p>
-
-    <h3 data-i18n="faq5q">How accurate is the transcription?</h3>
-    <p data-i18n="faq5a">Whisper large-v3-turbo is one of the most accurate speech recognition models available. Accuracy depends on audio quality and background noise. For best results, use clear recordings.</p>
-
-    <div class="disclaimer" data-i18n="disclaimer"><strong>Note:</strong> AI transcription and synthesis are provided as-is. Review output before using it in production or official documents.</div>
   </section>
 </main>
+</div>
+
+<div class="content">
+  <section class="examples-section">
+    <h2 data-i18n="examplesTitle">Hear it for yourself</h2>
+    <p class="examples-sub" data-i18n="examplesText">This 5-second clip was generated by our Text-to-Speech — then transcribed back by our Speech-to-Text. Real output, both ways.</p>
+    <div class="demo-card">
+      <div class="demo-top">
+        <img class="demo-wave" src="/examples/waveform.png" alt="Waveform of the demo clip">
+        <audio class="demo-audio" controls preload="none" src="/examples/demo.wav"></audio>
+      </div>
+      <div class="demo-transcript">
+        <span class="demo-tag" data-i18n="resultLabel">Transcript</span>
+        <p>"Turn any recording into a clean transcript, or turn any text into natural speech."</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="howTitle">How it works</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h3 data-i18n="how1t">Upload or type</h3>
+        <p data-i18n="how1d">Drop in an audio file, or paste the text you want to hear.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h3 data-i18n="how2t">AI does the work</h3>
+        <p data-i18n="how2d">Whisper transcribes speech to text; MeloTTS speaks your text in 7 languages.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h3 data-i18n="how3t">Copy or download</h3>
+        <p data-i18n="how3d">Copy the transcript, or download the generated speech as an audio file.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="useCasesTitle">What can you do?</h2>
+    <div class="uses-grid">
+      <div class="use-card"><div class="use-icon" aria-hidden="true">🎙️</div><h3 data-i18n="use1t">Meetings &amp; interviews</h3><p data-i18n="use1d">Turn recordings into clean, searchable notes.</p></div>
+      <div class="use-card"><div class="use-icon" aria-hidden="true">🎧</div><h3 data-i18n="use2t">Podcasts &amp; lectures</h3><p data-i18n="use2d">Get full transcripts you can quote and archive.</p></div>
+      <div class="use-card"><div class="use-icon" aria-hidden="true">🗣️</div><h3 data-i18n="use3t">Language learning</h3><p data-i18n="use3d">Hear any phrase spoken aloud in 7 languages.</p></div>
+      <div class="use-card"><div class="use-icon" aria-hidden="true">📖</div><h3 data-i18n="use4t">Accessibility</h3><p data-i18n="use4d">Create read-aloud versions of any written text.</p></div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+    <details open>
+      <summary data-i18n="faq1q">Is this tool free?</summary>
+      <p data-i18n="faq1a">Yes. It runs on Cloudflare Workers AI with a free daily quota. Normal use won't hit limits.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq2q">Are my files stored?</summary>
+      <p data-i18n="faq2a">No. Audio is processed in memory and discarded immediately after the transcript or speech is generated. Nothing is stored.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq3q">What audio formats work for transcription?</summary>
+      <p data-i18n="faq3a">MP3, WAV, M4A, and most common audio formats. Maximum file size is 25MB.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq4q">What languages does text-to-speech support?</summary>
+      <p data-i18n="faq4a">MeloTTS supports English, Chinese, French, German, Spanish, Japanese, and Korean. Output is WAV audio.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq5q">How accurate is the transcription?</summary>
+      <p data-i18n="faq5a">OpenAI Whisper is one of the most accurate speech recognition models available. Accuracy depends on audio quality and background noise. For best results, use clear recordings.</p>
+    </details>
+    <div class="disclaimer" data-i18n="disclaimer"><strong>Note:</strong> AI transcription and synthesis are provided as-is. Review output before using it in production or official documents.</div>
+  </section>
+</div>
 
 <footer class="footer site-footer">
 <div class="site-footer-inner">
@@ -207,7 +270,7 @@
 </div>
 </footer>
 
-<script src="/js/i18n.js"></script>
-<script src="/js/app.js"></script>
+<script src="/js/i18n.js?v=20261104a"></script>
+<script src="/js/app.js?v=20261104a"></script>
 </body>
 </html>
